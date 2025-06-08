@@ -27,11 +27,12 @@ services:
       - db
 
   frontend:
-    build: ./frontend
+    build: ./Frontend
+    command: npm run dev
     environment:
       - NEXT_PUBLIC_API_URL=http://localhost:8000
     volumes:
-      - ./frontend:/app
+      - ./Frontend:/app
     ports:
       - "3000:3000"
     depends_on:
