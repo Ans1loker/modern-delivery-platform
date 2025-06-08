@@ -2,13 +2,15 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
+# Copy package definition files
+COPY package.json package-lock.json* ./
+RUN npm install --production
 
+# Copy source files
 COPY . .
 
-RUN yarn build
+RUN npm run build
 
 EXPOSE 3000
 
-CMD ["yarn", "start"]
+CMD ["npm", "start"]

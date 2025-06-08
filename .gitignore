@@ -1,1 +1,13 @@
-E:\modern-delivery-platform\.gitignore
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Node.js
+node_modules/
+
+# Environment files
+.env
+
+# Build outputs
+Frontend/.next/
